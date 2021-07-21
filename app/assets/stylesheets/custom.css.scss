@@ -1,0 +1,57 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+    background-color: black !important;
+    }
+
+.nav-link {
+    color : white !important;
+}
+
+#logo {
+    color: white !important;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#home-container {
+    margin-top: 25px;
+}
+
+.jumbotron {
+    padding: 20px;
+    height: 450px;
+    background-image: asset-url('back2.jpg');
+    background-position: center center;
+    background-repeat:no-repeat ;
+    background-size: cover ;
+    color: white;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background: lightgrey;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+#author {
+  font-family: cursive;
+  font-style: italic;
+}
+
+.nodeco{
+  text-decoration: none;
+}
