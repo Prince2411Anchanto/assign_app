@@ -7,12 +7,17 @@
                     <%=link_to user.username, user_path(user), class: "fst-italic nodeco" %>
                 </div>
                 <div class="card-body">
-                <%= link_to gravatar_for(user), user_path(user)%>
-                <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
-                <%= link_to 'View Profile', user_path(user), class: "btn btn-outline-success" %>
-                <%if logged_in? && user == current_user%>
-                <%= link_to 'Edit profile', edit_user_path(user), class: "btn btn-outline-info" %>
-                <%end%>
+                    <%= link_to gravatar_for(user), user_path(user)%>
+                    <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+
+                    <%= link_to 'View Profile', user_path(user), class: "btn btn-outline-success" %>
+                    <%if logged_in? && user == current_user%>
+                        <%= link_to 'Edit profile', edit_user_path(user), class: "btn btn-outline-info" %>
+                    <%end%>
+                    <%if logged_in? && current_user.admin?%>
+                        <%= link_to 'Delete profile', user_path(user), class: "btn btn-outline-danger",
+                         method: :delete, data: { confirm: "Are u sure u want to delete the user?"}%>
+                    <%end%>
                 </div>
                 <div class="card-footer text-muted">
                 <small>Joined <%= time_ago_in_words(user.created_at)%> ago</small>
