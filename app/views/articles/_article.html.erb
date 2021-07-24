@@ -4,7 +4,7 @@
         <div class="col-8">
             <div class="card text-center shadow mb-5 bg-white rounded">
                 <div class="card-header">
-                    <p id="author">by <%= article.user.username %></p>
+                    <p id="author">by <%= link_to article.user.username, user_path(article.user), class: "text-dark "%></p>
                 </div>
                 <div class="card-body">
                 <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success nodeco" %></h5>
@@ -21,4 +21,4 @@
         </div>
     </div>
 <% end %>
-</div>  
+</div> 
